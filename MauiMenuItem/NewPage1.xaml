@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMenuItem.NewPage1"
+             Title="Modal">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Text="Close" Clicked="OnCloseButtonClicked" />
+        <ListView
+            Grid.Row="1" 
+            x:Name="listView"
+            HeightRequest="500"
+            HorizontalOptions="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Item1" Clicked="OnMenuItemClicked" />
+                            <MenuItem Text="Item2" Clicked="OnMenuItemClicked" />
+                        </ViewCell.ContextActions>
+                        <Label Text="{Binding DisplayName}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView> 
+    </Grid>
+</ContentPage>
